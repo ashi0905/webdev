@@ -1,0 +1,83 @@
+/* ====== Register User Page Styles ====== */
+
+/* 🌈 Background section */
+.gradient-custom-3 {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* prevents scrollbars if background extends */
+}
+
+/* ✨ Background image with blur effect */
+.gradient-custom-3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('home.jpg') center/cover no-repeat;
+  filter: blur(10px); /*  adjust this value (e.g., 3px or 10px) to your liking */
+  transform: scale(1.1); /* prevents edges from showing when blurred */
+  z-index: 0;
+}
+
+/* 🧊 Card/form container */
+.card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  padding: 25px 30px;
+  background-color: rgba(255, 255, 255, 0.9); /* semi-transparent for classiness */
+  z-index: 1;
+  position: relative;
+}
+
+/* ✨ Page font and reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #000; /* fallback color if image doesn’t load */
+}
+
+/* 🏷️ Form styling */
+.form-label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.form-control {
+  height: 35px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.form-check {
+  margin-bottom: 8px;
+}
+
+.form-check-label {
+  font-size: 14px;
+}
+
+.form-check-label a {
+  text-decoration: none;
+}
+
+.form-check-label a:hover {
+  text-decoration: underline;
+  color: #0d6efd;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+}
