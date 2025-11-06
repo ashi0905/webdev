@@ -28,12 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
     if (in_array($fileType, $allowedTypes)) {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            $message = "✨ File uploaded successfully!";
+            $message = "File uploaded successfully!";
         } else {
-            $message = "⚠️ Oops! Something went wrong during upload.";
+            $message = "Oh no! Something went wrong during upload.";
         }
     } else {
-        $message = "🚫 File type not allowed. Please upload an image or PDF.";
+        $message = "File type not allowed. Please upload an image or PDF.";
     }
 }
 ?>
@@ -112,3 +112,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 </div>
 </body>
 </html>
+
