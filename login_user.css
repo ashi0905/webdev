@@ -1,0 +1,42 @@
+/* Background gradients */
+.gradient-custom-3 {
+  background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+}
+
+.gradient-custom-4 {
+  background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+}
+
+/* Card design */
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Button */
+.btn.gradient-custom-4 {
+  color: #000;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.gradient-custom-4:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* Input fields */
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+}
+
+/* Labels */
+.form-label {
+  font-weight: 500;
+}
+
+/* Alert box */
+.alert {
+  border-radius: 10px;
+}

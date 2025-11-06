@@ -28,12 +28,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 
     if (in_array($fileType, $allowedTypes)) {
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
-            $message = "File uploaded successfully!";
+            $message = "✨ File uploaded successfully!";
         } else {
-            $message = "Oh no! Something went wrong during upload.";
+            $message = "⚠️ Oops! Something went wrong during upload.";
         }
     } else {
-        $message = "File type not allowed. Please upload an image or PDF.";
+        $message = "🚫 File type not allowed. Please upload an image or PDF.";
     }
 }
 ?>
@@ -59,9 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 <body>
 <div class="container py-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-bold">Welcome, <?php echo htmlspecialchars($username); ?> </h2>
+        <h2 class="fw-bold">Welcome, <?php echo htmlspecialchars($username); ?> 👋</h2>
         <div>
-            <a href="home.php" class="btn btn-outline-light me-2"> Home</a>
+            <a href="home.php" class="btn btn-outline-light me-2">🏠 Home</a>
             <a href="logout.php" class="btn btn-danger">Logout</a>
         </div>
     </div>
@@ -112,5 +112,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
 </div>
 </body>
 </html>
-
-

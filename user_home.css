@@ -1,0 +1,19 @@
+/*.navbar {
+  background: #222;
+  padding: 10px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}*/
+
+
+

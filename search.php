@@ -56,10 +56,10 @@ session_start();
     ?>
   </div>
 
-  <!-- Footer -->
-  <footer class="text-center py-3 bg-white shadow-sm mt-5">
-    <small class="text-muted">&copy; <?php echo date('Y'); ?> Project Runaway. All rights reserved.</small>
-  </footer>
+   <!-- Footer -->
+<footer style="position: fixed; bottom: 0; width: 100%; background-color: black; color: white; text-align: center; padding: 10px 0; z-index: 1000;">
+    <small>&copy; <?php echo date('Y'); ?> Project Runaway. All rights reserved.</small>
+</footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

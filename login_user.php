@@ -4,12 +4,10 @@ include('db_connect.php');
 
 $message = '';
 
-// kapag may nagsubmit ng form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
   $password = $_POST['password'];
 
-  // hanapin user sa database
   $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
   $stmt->bind_param("s", $email);
   $stmt->execute();
@@ -17,15 +15,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
-    // check password
-    if (password_verify($password, $user['password'])) {
-      $_SESSION['user'] = $user;
 
-      // redirect depende sa role
+    if (password_verify($password, $user['password'])) {
+      // ✅ Store user data in session for navbar display
+      $_SESSION['user'] = $user;
+      $_SESSION['username'] = $user['username']; // for easy access
+
+      // Redirect based on role
       if ($user['role'] === 'admin') {
         header("Location: admin_dashboard.php");
       } else {
-        header("Location: home.php");
+        header("Location: uhome.php");
       }
       exit;
     } else {
@@ -36,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,14 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Login | Project Runaway</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <style>
-    .gradient-custom-3 {
-      background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-    }
-    .gradient-custom-4 {
-      background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
-    }
-  </style>
+  <link rel="stylesheet" href="login_user.css">
 </head>
 
 <body>
@@ -66,12 +58,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Login to Your Account</h2>
 
-              <?php if($message): ?>
+              <?php if ($message): ?>
                 <div class="alert alert-danger text-center"><?= htmlspecialchars($message) ?></div>
               <?php endif; ?>
 
               <form method="POST" action="">
-
                 <div class="form-outline mb-4">
                   <input type="email" name="email" id="formEmail" class="form-control form-control-lg" required />
                   <label class="form-label" for="formEmail">Your Email</label>
@@ -90,7 +81,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   Don’t have an account?
                   <a href="register_user.php" class="fw-bold text-body"><u>Register here</u></a>
                 </p>
-
               </form>
 
             </div>

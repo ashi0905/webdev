@@ -9,7 +9,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <nav class="navbar navbar-expand-lg bg-white shadow-sm py-3 fixed-top">
   <div class="container">
     <!-- Logo (goes to home feed / designers' posts) -->
-    <a class="navbar-brand fw-bold text-dark" href="home.php">
+    <a class="navbar-brand fw-bold text-dark" href="uhome.php">
       <i class="bi bi-bag-heart-fill me-2 text-danger"></i> Project Runaway
     </a>
 
